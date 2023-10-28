@@ -1,2 +1,8 @@
-# aggrid-multiselect-celleditor
-code reference on how to implement multiselect with aggrid tables
+# MultiSelect Cell Editors in AgGrid Tables
+
+## Usage
+
+```bash
+npm install
+npm start
+```
