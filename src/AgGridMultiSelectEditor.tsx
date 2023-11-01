@@ -14,8 +14,8 @@ interface AgGridMultiSelectEditorRef extends ICellEditorReactComp {
 export const AgGridMultiSelectEditor = React.forwardRef<
   AgGridMultiSelectEditorRef,
   AgGridMultiSelectEditorParams
->((props: AgGridMultiSelectEditorParams, _ref) => {
-  const [value, setValue] = useState(props.value as string[]);
+>((props, _ref) => {
+  const [value, setValue] = useState<string[]>(props.value);
   const refInput = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -26,8 +26,11 @@ export const AgGridMultiSelectEditor = React.forwardRef<
   /* Component Editor Lifecycle methods */
   useImperativeHandle(_ref, () => {
     return {
-      getValue() {
+      getValue: () => {
         return value;
+      },
+      isPopup: () => {
+        return false;
       },
     };
   });
